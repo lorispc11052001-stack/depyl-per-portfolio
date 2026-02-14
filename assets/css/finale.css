@@ -828,10 +828,45 @@ footer {
     color: white !important;
 }
 
-@media (max-width: 850px) {
+/* @media (max-width: 850px) {
     .box-grazie { padding: 35px 25px; }
     .cta-grazie { flex-direction: column; }
     .cta-grazie .bottone-card { width: 100%; text-align: center; }
 }
+ */
 
+@media (max-width: 850px) {
+    /* 1. Riduciamo il padding del contenitore principale */
+    .contiene-header {
+        padding: 5px 5%; /* Prima era 18px */
+    }
 
+    /* 2. Compattiamo la htop: meno spazio tra logo e menu */
+    .htop {
+        flex-direction: column; 
+        padding: 5px 0; /* Ridotto da 15px */
+        gap: 5px;       /* Prima era 15px, ora è minimo */
+    }
+
+    /* 3. Logo decisamente più piccolo */
+    .logotop {
+        width: 60px;    /* Era 90/100px, ora occupa pochissimo spazio */
+    }
+
+    /* 4. Menu ultra compatto */
+    .navig {
+        gap: 5px;       /* Spazio minimo tra i link */
+    }
+
+    .navig li a {
+        font-size: 0.75rem; /* Testo più piccolo */
+        padding: 4px 6px;   /* Quasi zero padding */
+    }
+
+    /* 5. Bottone CTA (il link stile bottone) ridotto */
+    .navig .nav-cta-button {
+        font-size: 0.75rem;
+        padding: 5px 12px;
+        margin-left: 5px;
+    }
+}
