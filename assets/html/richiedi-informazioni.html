@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richiedi informazioni | Depyl</title>
+    <link rel="stylesheet" href="../css/finale.css">
+    <link rel="shortcut icon" href="../img/Blue Water Icon Logo (1).png" type="image/x-icon">
+</head>
+<body>   
+    <div class="contiene-tutto">
+        <nav class="contiene-header">
+            <div class="htop">
+                <a href="../../index.html">
+                    <img src="../img/oioi.png" alt="Logo Depyl - Torna alla home" class="logotop">
+                </a>
+                <ul class="navig">
+                    <li><a href="../../index.html#problema">Problema</a></li>
+                    <li><a href="../../index.html#soluzione">Soluzione</a></li>
+                    <li><a href="../../index.html#differenzazione">Differenziazione</a></li>
+                    <li><a href="../../index.html#impatto">Impatto Sociale</a></li>
+                    <li><a href="../../index.html#onu">Obiettivi ONU</a></li>
+                    <li><a href="scopri-soluzione.html" class="nav-cta-button">Scopri la soluzione più adatta a te</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <a href="javascript:history.back()" class="btn-indietro" aria-label="Torna indietro">
+            <span class="freccia-indietro">←</span> Torna indietro
+        </a>
+
+        <header class="hero-richiedi">
+            <div class="titolo">
+                <h1 class="titoloh1">Richiedi informazioni</h1>
+                <h2 class="titoloh2">Compila il modulo e ti ricontatteremo per trovare la soluzione Depyl più adatta alle tue esigenze.</h2>
+            </div>
+        </header>
+
+        <main class="main-richiedi">
+            <section class="form-richiedi">
+                <form class="form-contatti" id="form-richiedi" action="grazie.html" method="get">
+                    <div class="campo-form">
+                        <label for="nome">Nome e cognome *</label>
+                        <input type="text" id="nome" name="nome" required placeholder="Il tuo nome">
+                    </div>
+                    <div class="campo-form">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="tua@email.it">
+                    </div>
+                    <div class="campo-form">
+                        <label for="telefono">Telefono</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Il tuo numero">
+                    </div>
+                    <div class="campo-form">
+                        <label for="tipo">Interesse</label>
+                        <select id="tipo" name="tipo">
+                            <option value="">Seleziona...</option>
+                            <option value="azienda">Azienda / Attività commerciale</option>
+                            <option value="famiglia">Famiglia / Abitazione</option>
+                            <option value="altro">Altro</option>
+                        </select>
+                    </div>
+                    <div class="campo-form">
+                        <label for="messaggio">Messaggio *</label>
+                        <textarea id="messaggio" name="messaggio" rows="5" required placeholder="Descrivi le tue esigenze o le tue domande..."></textarea>
+                    </div>
+                    <button type="submit" class="bottone-invia">Invia richiesta</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <div class="cta">
+                <h5 class="segui-social">Segui i nostri social</h5>
+            </div>
+            <div class="social">
+                <div>
+                    <img src="../img/fb.png" alt="logo facebook" class="facebook">
+                    <a href="https://www.facebook.com/?locale=it_IT" class="link-social" target="_blank" rel="noopener">Facebook</a>
+                </div>
+                <div>
+                    <img src="../img/instagram-logo-png-transparent-background.png" alt="logo instagram" class="instagram">
+                    <a href="https://www.instagram.com/" class="link-social" target="_blank" rel="noopener">Instagram</a>
+                </div>
+                <div>
+                    <img src="../img/yt.png" alt="logo youtube" class="youtube">
+                    <a href="https://www.youtube.com/" class="link-social" target="_blank" rel="noopener">Youtube</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        // Pre-compila il tipo di interesse se passato nell'URL
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const tipo = params.get('tipo');
+            const select = document.getElementById('tipo');
+            if (tipo && select) {
+                select.value = tipo;
+            }
+            // Form submit: redirect pulito a grazie.html (per portfolio/demo)
+            document.getElementById('form-richiedi').addEventListener('submit', function(e) {
+                e.preventDefault();
+                window.location.href = 'grazie.html';
+            });
+        });
+    </script>
+</body>
+</html>
