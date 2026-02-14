@@ -107,14 +107,47 @@ header {
     padding: 40px 5%;
 }
 
+// .titoloh1 {
+//     font-size: clamp(1.5rem, 4vw, 2.8rem); 
+//     color: #fff;
+//     border: 3px solid rgba(255,255,255,0.8);
+//     padding: 5px;
+//     margin-bottom: 25px;
+//     text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+
+
+// }
+
+// .h1-debug{text-align: center;}
+
+.titolo {
+    display: flex;
+    flex-direction: column; /* Mette gli elementi uno sotto l'altro */
+    align-items: center;    /* CENTRA tutto orizzontalmente */
+    width: 100%;
+    text-align: center;
+}
+
 .titoloh1 {
     font-size: clamp(1.5rem, 4vw, 2.8rem); 
     color: #fff;
     border: 3px solid rgba(255,255,255,0.8);
-    padding: 5px;
+    padding: 15px 25px; /* Più spazio interno */
     margin-bottom: 25px;
     text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    
+    /* QUESTE SONO LE RIGHE FONDAMENTALI */
+    display: inline-block; /* Fa stringere il bordo attorno al testo */
+    max-width: 100%;       /* Evita che esca dallo schermo su mobile */
+    text-align: center;
 }
+
+
+
+.header-debug{text-align: center;}
+
+
+
 
 .titoloh2 {
     font-size: clamp(0.6rem, 1.8vw, 1.3rem); 
@@ -281,6 +314,7 @@ footer {
 }
 
 .social a:hover{color: rgba(91, 181, 255, 0.671); transform: scale(1.1); transition: var(--transition);}
+
 
 
 @media (max-width: 850px) {

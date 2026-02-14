@@ -1,3 +1,201 @@
+@charset "UTF-8";
+/* Tasto/Freccia per tornare indietro */
+.btn-indietro {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 15px 5%;
+  padding: 10px 18px;
+  background-color: var(--bg-gray);
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  border-radius: 50px;
+  border: 2px solid var(--light-blue);
+  transition: var(--transition);
+}
+
+.btn-indietro:hover {
+  background-color: var(--light-blue);
+  color: white;
+  transform: translateX(-4px);
+}
+
+.freccia-indietro {
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+/* Hero pagina Richiedi */
+.hero-richiedi {
+  min-height: 220px;
+}
+
+.hero-richiedi .logo-grande {
+  display: none;
+}
+
+/* Main pagina Richiedi */
+.main-richiedi {
+  padding: 3% 5% 5%;
+  background-color: var(--bg-gray);
+}
+
+.form-richiedi {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.form-contatti {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.campo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.campo-form label {
+  font-weight: 600;
+  color: var(--primary-blue);
+  font-size: 0.95rem;
+}
+.campo-form input,
+.campo-form select,
+.campo-form textarea {
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+.campo-form input:focus,
+.campo-form select:focus,
+.campo-form textarea:focus {
+  outline: none;
+  border-color: var(--light-blue);
+  background-color: rgba(87, 208, 255, 0.05);
+}
+.campo-form input::-moz-placeholder, .campo-form textarea::-moz-placeholder {
+  color: #999;
+}
+.campo-form input::placeholder,
+.campo-form textarea::placeholder {
+  color: #999;
+}
+
+.bottone-invia {
+  margin-top: 10px;
+  padding: 15px 35px;
+  border-radius: 50px;
+  border: 2px solid var(--light-blue);
+  background-color: rgba(87, 208, 255, 0.1);
+  color: var(--primary-blue);
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  align-self: flex-start;
+}
+
+.bottone-invia:hover {
+  background-color: var(--light-blue);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Responsive pagina Richiedi */
+@media (max-width: 850px) {
+  .btn-indietro {
+    margin: 12px 3%;
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+  .form-richiedi {
+    padding: 25px 20px;
+  }
+  .bottone-invia {
+    width: 100%;
+    align-self: stretch;
+  }
+}
+/* Pagina Grazie (conferma form) */
+.main-grazie {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5% 5%;
+  background: linear-gradient(135deg, var(--bg-gray) 0%, #e8f4f8 100%);
+}
+
+.box-grazie {
+  max-width: 560px;
+  text-align: center;
+  background: white;
+  padding: 50px 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 40px rgba(28, 47, 156, 0.12);
+  border: 2px solid rgba(87, 208, 255, 0.3);
+}
+
+.icona-grazie {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 25px;
+  background: linear-gradient(135deg, var(--light-blue), var(--primary-blue));
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(87, 208, 255, 0.4);
+}
+
+.box-grazie h1 {
+  color: var(--primary-blue);
+  margin-bottom: 20px;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.box-grazie p {
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+.box-grazie .testo-secondario {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.cta-grazie {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+.bottone-secondario {
+  background-color: white !important;
+  border-color: var(--primary-blue) !important;
+  color: var(--primary-blue) !important;
+}
+.bottone-secondario:hover {
+  background-color: var(--primary-blue) !important;
+  color: white !important;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -99,13 +297,29 @@ header {
   padding: 40px 5%;
 }
 
+.titolo {
+  display: flex;
+  flex-direction: column; /* Mette gli elementi uno sotto l'altro */
+  align-items: center; /* CENTRA tutto orizzontalmente */
+  width: 100%;
+  text-align: center;
+}
+
 .titoloh1 {
   font-size: clamp(1.5rem, 4vw, 2.8rem);
   color: #fff;
   border: 3px solid rgba(255, 255, 255, 0.8);
-  padding: 5px;
+  padding: 15px 25px; /* Più spazio interno */
   margin-bottom: 25px;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  /* QUESTE SONO LE RIGHE FONDAMENTALI */
+  display: inline-block; /* Fa stringere il bordo attorno al testo */
+  max-width: 100%; /* Evita che esca dallo schermo su mobile */
+  text-align: center;
+}
+
+.header-debug {
+  text-align: center;
 }
 
 .titoloh2 {

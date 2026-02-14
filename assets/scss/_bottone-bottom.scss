@@ -134,3 +134,73 @@
         align-self: stretch;
     }
 }
+
+/* Pagina Grazie (conferma form) */
+.main-grazie {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5% 5%;
+    background: linear-gradient(135deg, var(--bg-gray) 0%, #e8f4f8 100%);
+}
+
+.box-grazie {
+    max-width: 560px;
+    text-align: center;
+    background: white;
+    padding: 50px 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 40px rgba(28, 47, 156, 0.12);
+    border: 2px solid rgba(87, 208, 255, 0.3);
+}
+
+.icona-grazie {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+    background: linear-gradient(135deg, var(--light-blue), var(--primary-blue));
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(87, 208, 255, 0.4);
+}
+
+.box-grazie h1 {
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.box-grazie p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.box-grazie .testo-secondario {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.cta-grazie {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+.bottone-secondario {
+    background-color: white !important;
+    border-color: var(--primary-blue) !important;
+    color: var(--primary-blue) !important;
+
+    &:hover {
+        background-color: var(--primary-blue) !important;
+        color: white !important;
+    }
+}
