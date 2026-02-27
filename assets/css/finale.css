@@ -576,3 +576,49 @@ footer {
     font-size: 0.7rem;
   }
 }/*# sourceMappingURL=sass.css.map */
+/* Fix compattezza sticky menu mobile (override finale) */
+@media (max-width: 850px) {
+  .contiene-header {
+    padding: 6px 10px !important;
+  }
+
+  .contiene-header .htop {
+    display: grid !important;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 8px;
+    padding: 0 !important;
+  }
+
+  .contiene-header .logotop {
+    width: 56px !important;
+  }
+
+  .contiene-header .navig {
+    width: 100% !important;
+    min-width: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 6px !important;
+    margin: 0;
+    padding: 0;
+  }
+
+  .contiene-header .navig li {
+    margin: 0;
+  }
+
+  .contiene-header .navig li a {
+    font-size: 0.72rem !important;
+    line-height: 1.2;
+    padding: 4px 6px !important;
+    border-radius: 6px;
+  }
+
+  .contiene-header .navig .nav-cta-button {
+    font-size: 0.72rem !important;
+    padding: 5px 8px !important;
+    border-width: 1px;
+  }
+}
