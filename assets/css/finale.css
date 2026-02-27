@@ -1,3 +1,5 @@
+
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -23,6 +25,7 @@
 
 html {
     scroll-behavior: smooth;
+    
 }
 
 body {
@@ -31,12 +34,6 @@ body {
     line-height: 1.6;
     color: var(--text-dark);
     -webkit-font-smoothing: antialiased;
-}
-
-
-.contiene-tutto {
-    width: 100%;
-    background-color: white; 
 }
 
 .contiene-header {
