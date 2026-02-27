@@ -861,9 +861,7 @@ footer {
     .navig li a {
         font-size: 0.75rem; /* Testo più piccolo */
         padding: 4px 6px;   /* Quasi zero padding */
-    }
-
-    /* 5. Bottone CTA (il link stile bottone) ridotto */
+    }    /* 5. Bottone CTA (il link stile bottone) ridotto */
     .navig .nav-cta-button {
         font-size: 0.75rem;
         padding: 5px 12px;
