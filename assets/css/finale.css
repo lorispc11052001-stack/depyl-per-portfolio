@@ -21,11 +21,11 @@
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 16px;
+    --sticky-offset: 64px;
 }
 
 html {
     scroll-behavior: smooth;
-    
 }
 
 body {
@@ -37,7 +37,7 @@ body {
 }
 
 .contiene-header {
-    padding: 18px 5%;
+    padding: 8px 4%;
     background: rgba(255,255,255,0.98);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -47,6 +47,11 @@ body {
     z-index: 100;
 }
 
+main section[id],
+main aside[id] {
+    scroll-margin-top: var(--sticky-offset);
+}
+
 .htop {
     display: flex;
     justify-content: space-between;
@@ -54,7 +59,7 @@ body {
 }
 
 .logotop {
-    width: clamp(90px, 10vw, 100px);
+    width: clamp(70px, 7vw, 88px);
     height: auto;
     flex-shrink: 0;
 }
@@ -63,22 +68,30 @@ body {
     display: flex;
     align-items: center;
     list-style: none;
-    gap: clamp(10px, 2vw, 25px);
-    flex-wrap: wrap; 
-    justify-content: center;
-    width: 100%;
+    gap: clamp(8px, 1.2vw, 16px);
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    width: auto;
+    margin-left: auto;
     flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    padding-bottom: 2px;
+}
 
+.navig li {
+    flex: 0 0 auto;
 }
 
 .navig li a {
     text-decoration: none;
-    font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+    font-size: clamp(0.82rem, 1vw, 0.98rem);
     color: var(--text-dark);
     font-weight: 600;
     transition: var(--transition);
     white-space: nowrap;
-    padding: 8px 14px;
+    padding: 6px 10px;
     border-radius: 8px;
 }
 
@@ -122,10 +135,10 @@ body {
     border-radius: 50px;
     border: 2px solid var(--light-blue);
     color: var(--primary-blue);
-    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    font-size: clamp(0.8rem, 0.95vw, 0.92rem);
     font-weight: 700;
     background-color: rgba(87, 208, 255, 0.1);
-    padding: 10px 20px;
+    padding: 7px 14px;
     cursor: pointer;
     transition: var(--transition);
     text-decoration: none;
@@ -545,30 +558,45 @@ footer {
 
 
 @media (max-width: 850px) {
-    
+    :root {
+        --sticky-offset: 62px;
+    }
+
 .htop {
-        flex-direction: column; /* Logo sopra, menu sotto */
-        padding: 15px;
-        gap: 15px;
+        flex-direction: row;
+        align-items: center;
+        padding: 2px 0;
+        gap: 8px;
     }
 
 /* .contiene-header{height: 50%;} */
 
 .navig {
         width: 100%;
-        justify-content: center;
-        gap: 8px;
+        justify-content: flex-start;
+        gap: 6px;
         margin: 0;
-        padding: 0;
+        padding: 0 0 2px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: thin;
     }
 
+    .logotop {
+        width: 56px;
+    }
+
+    .navig li {
+        flex: 0 0 auto;
+    }
 
     .logo-grande{width: 100px;}
 
 
     .navig li a {
-        font-size: 0.85rem;
-        padding: 6px 10px;
+        font-size: 0.76rem;
+        padding: 5px 7px;
         border-radius: 6px;
     }
 
@@ -615,7 +643,7 @@ footer {
 .link-social{font-size: 0.7rem;}
 
 /* Pagina Scopri - mobile */
-.navig .nav-cta-button { font-size: 2.5vw; padding: 8px 15px; }
+.navig .nav-cta-button { font-size: 0.74rem; padding: 5px 10px; margin-left: 0; }
 .scelta-soluzioni { padding: var(--space-lg) 3%; gap: var(--space-md); }
 .card-soluzione { padding: var(--space-md); }
 .bottone-card { padding: 10px 20px; font-size: 0.95rem; }
@@ -832,36 +860,3 @@ footer {
 }
  */
 
-@media (max-width: 850px) {
-    /* 1. Riduciamo il padding del contenitore principale */
-    .contiene-header {
-        padding: 5px 5%; /* Prima era 18px */
-    }
-
-    /* 2. Compattiamo la htop: meno spazio tra logo e menu */
-    .htop {
-        flex-direction: column; 
-        padding: 5px 0; /* Ridotto da 15px */
-        gap: 5px;       /* Prima era 15px, ora è minimo */
-    }
-
-    /* 3. Logo decisamente più piccolo */
-    .logotop {
-        width: 60px;    /* Era 90/100px, ora occupa pochissimo spazio */
-    }
-
-    /* 4. Menu ultra compatto */
-    .navig {
-        gap: 5px;       /* Spazio minimo tra i link */
-    }
-
-    .navig li a {
-        font-size: 0.75rem; /* Testo più piccolo */
-        padding: 4px 6px;   /* Quasi zero padding */
-    }    /* 5. Bottone CTA (il link stile bottone) ridotto */
-    .navig .nav-cta-button {
-        font-size: 0.75rem;
-        padding: 5px 12px;
-        margin-left: 5px;
-    }
-}
