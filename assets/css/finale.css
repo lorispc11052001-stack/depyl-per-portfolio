@@ -1,4 +1,4 @@
-
+scroll
 
 * {
     box-sizing: border-box;
@@ -21,11 +21,12 @@
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 16px;
+    --sticky-offset: 20px;
 }
 
 html {
     scroll-behavior: smooth;
-    
+    scroll-padding-top: var(--sticky-offset);
 }
 
 body {
@@ -37,7 +38,7 @@ body {
 }
 
 .contiene-header {
-    padding: 18px 5%;
+    padding: 0px 5%;
     background: rgba(255,255,255,0.98);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -47,10 +48,16 @@ body {
     z-index: 100;
 }
 
+main section[id],
+main aside[id] {
+    scroll-margin-top: var(--sticky-offset);
+}
+
 .htop {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    height: 90px;
 }
 
 .logotop {
@@ -68,6 +75,7 @@ body {
     justify-content: center;
     width: 100%;
     flex-direction: row;
+    padding-top: 6px;
 
 }
 
@@ -78,7 +86,9 @@ body {
     font-weight: 600;
     transition: var(--transition);
     white-space: nowrap;
-    padding: 8px 14px;
+    padding: 6px 10px;
+    display: inline-flex;
+    align-items: center;
     border-radius: 8px;
 }
 
@@ -129,7 +139,16 @@ body {
     cursor: pointer;
     transition: var(--transition);
     text-decoration: none;
+    margin-bottom: 10px;
 }
+.navig{padding: 0;
+margin: 0;}
+
+.navig li {
+    margin: 0; /* NUOVO: Evita spaziature indesiderate tra le righe del menu */
+}
+
+
 .navig .nav-cta-button:hover { 
     color: white; 
     background-color: var(--light-blue);
@@ -833,35 +852,44 @@ footer {
  */
 
 @media (max-width: 850px) {
-    /* 1. Riduciamo il padding del contenitore principale */
     .contiene-header {
-        padding: 5px 5%; /* Prima era 18px */
+        padding: 0px 4%;
     }
 
-    /* 2. Compattiamo la htop: meno spazio tra logo e menu */
     .htop {
-        flex-direction: column; 
-        padding: 5px 0; /* Ridotto da 15px */
-        gap: 5px;       /* Prima era 15px, ora è minimo */
+        flex-direction: row;
+        align-items: center;
+        padding: 0px 0;
+        gap: 8px;
     }
 
-    /* 3. Logo decisamente più piccolo */
     .logotop {
-        width: 60px;    /* Era 90/100px, ora occupa pochissimo spazio */
+        width: 56px;
     }
 
-    /* 4. Menu ultra compatto */
     .navig {
-        gap: 5px;       /* Spazio minimo tra i link */
+        gap: 6px;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: thin;
+        padding-bottom: 2px;
+    }
+
+    .navig li {
+        flex: 0 0 auto;
     }
 
     .navig li a {
-        font-size: 0.75rem; /* Testo più piccolo */
-        padding: 4px 6px;   /* Quasi zero padding */
-    }    /* 5. Bottone CTA (il link stile bottone) ridotto */
+        font-size: 0.76rem;
+        padding: 5px 7px;
+    }
+
     .navig .nav-cta-button {
-        font-size: 0.75rem;
-        padding: 5px 12px;
-        margin-left: 5px;
+        font-size: 0.74rem;
+        padding: 5px 10px;
+        margin-left: 0;
     }
 }
+
