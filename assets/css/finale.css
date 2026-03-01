@@ -1,3 +1,5 @@
+
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -41,12 +43,6 @@ body {
     line-height: 1.6;
     color: var(--text-dark);
     -webkit-font-smoothing: antialiased;
-}
-
-
-.contiene-tutto {
-    width: 100%;
-    background-color: white; 
 }
 
 .contiene-header {
@@ -875,9 +871,7 @@ footer {
     .navig li a {
         font-size: 0.75rem; /* Testo più piccolo */
         padding: 4px 6px;   /* Quasi zero padding */
-    }
-
-    /* 5. Bottone CTA (il link stile bottone) ridotto */
+    }    /* 5. Bottone CTA (il link stile bottone) ridotto */
     .navig .nav-cta-button {
         font-size: 0.75rem;
         padding: 5px 12px;
