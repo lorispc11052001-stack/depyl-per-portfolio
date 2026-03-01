@@ -1,0 +1,7 @@
+# Evita nuove copie annidate della repo dentro se stessa
+# (errore comune quando si fa clone nella cartella sbagliata)
+depyl-per-portfolio/
+
+# File locali editor/OS
+.vscode/
+.DS_Store
