@@ -1,4 +1,4 @@
-
+scroll
 
 * {
     box-sizing: border-box;
@@ -21,11 +21,12 @@
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 16px;
-    --sticky-offset: 64px;
+    --sticky-offset: 20px;
 }
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: var(--sticky-offset);
 }
 
 body {
@@ -37,7 +38,7 @@ body {
 }
 
 .contiene-header {
-    padding: 8px 4%;
+    padding: 0px 5%;
     background: rgba(255,255,255,0.98);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -54,12 +55,13 @@ main aside[id] {
 
 .htop {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    height: 90px;
 }
 
 .logotop {
-    width: clamp(70px, 7vw, 88px);
+    width: clamp(90px, 10vw, 100px);
     height: auto;
     flex-shrink: 0;
 }
@@ -68,30 +70,22 @@ main aside[id] {
     display: flex;
     align-items: center;
     list-style: none;
-    gap: clamp(8px, 1.2vw, 16px);
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    width: auto;
-    margin-left: auto;
+    gap: clamp(10px, 2vw, 25px);
+    flex-wrap: wrap; 
+    justify-content: center;
+    width: 100%;
     flex-direction: row;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: thin;
-    padding-bottom: 2px;
-}
 
-.navig li {
-    flex: 0 0 auto;
 }
 
 .navig li a {
     text-decoration: none;
-    font-size: clamp(0.82rem, 1vw, 0.98rem);
+    font-size: clamp(0.9rem, 1.4vw, 1.1rem);
     color: var(--text-dark);
     font-weight: 600;
     transition: var(--transition);
     white-space: nowrap;
-    padding: 6px 10px;
+    /* padding: 8px 14px; */
     border-radius: 8px;
 }
 
@@ -135,14 +129,23 @@ main aside[id] {
     border-radius: 50px;
     border: 2px solid var(--light-blue);
     color: var(--primary-blue);
-    font-size: clamp(0.8rem, 0.95vw, 0.92rem);
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
     font-weight: 700;
     background-color: rgba(87, 208, 255, 0.1);
-    padding: 7px 14px;
+    padding: 10px 20px;
     cursor: pointer;
     transition: var(--transition);
     text-decoration: none;
+    margin-bottom: 10px;
 }
+.navig{padding: 0;
+margin: 0;}
+
+.navig li {
+    margin: 0; /* NUOVO: Evita spaziature indesiderate tra le righe del menu */
+}
+
+
 .navig .nav-cta-button:hover { 
     color: white; 
     background-color: var(--light-blue);
@@ -558,45 +561,30 @@ footer {
 
 
 @media (max-width: 850px) {
-    :root {
-        --sticky-offset: 62px;
-    }
-
+    
 .htop {
-        flex-direction: row;
-        align-items: center;
-        padding: 2px 0;
-        gap: 8px;
+        flex-direction: column; /* Logo sopra, menu sotto */
+        padding: 15px;
+        gap: 15px;
     }
 
 /* .contiene-header{height: 50%;} */
 
 .navig {
         width: 100%;
-        justify-content: flex-start;
-        gap: 6px;
+        justify-content: center;
+        gap: 8px;
         margin: 0;
-        padding: 0 0 2px;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        overflow-y: hidden;
-        scrollbar-width: thin;
+        padding: 0;
     }
 
-    .logotop {
-        width: 56px;
-    }
-
-    .navig li {
-        flex: 0 0 auto;
-    }
 
     .logo-grande{width: 100px;}
 
 
     .navig li a {
-        font-size: 0.76rem;
-        padding: 5px 7px;
+        font-size: 0.85rem;
+        padding: 6px 10px;
         border-radius: 6px;
     }
 
@@ -643,7 +631,7 @@ footer {
 .link-social{font-size: 0.7rem;}
 
 /* Pagina Scopri - mobile */
-.navig .nav-cta-button { font-size: 0.74rem; padding: 5px 10px; margin-left: 0; }
+.navig .nav-cta-button { font-size: 2.5vw; padding: 8px 15px; }
 .scelta-soluzioni { padding: var(--space-lg) 3%; gap: var(--space-md); }
 .card-soluzione { padding: var(--space-md); }
 .bottone-card { padding: 10px 20px; font-size: 0.95rem; }
@@ -859,4 +847,46 @@ footer {
     .cta-grazie .bottone-card { width: 100%; text-align: center; }
 }
  */
+
+@media (max-width: 850px) {
+    .contiene-header {
+        padding: 0px 4%;
+    }
+
+    .htop {
+        flex-direction: row;
+        align-items: center;
+        padding: 0px 0;
+        gap: 8px;
+    }
+
+    .logotop {
+        width: 56px;
+    }
+
+    .navig {
+        gap: 6px;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: thin;
+        padding-bottom: 2px;
+    }
+
+    .navig li {
+        flex: 0 0 auto;
+    }
+
+    .navig li a {
+        font-size: 0.76rem;
+        padding: 5px 7px;
+    }
+
+    .navig .nav-cta-button {
+        font-size: 0.74rem;
+        padding: 5px 10px;
+        margin-left: 0;
+    }
+}
 
