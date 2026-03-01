@@ -21,11 +21,20 @@
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 16px;
+    --anchor-offset: 140px;
 }
 
 html {
     scroll-behavior: smooth;
-    
+    scroll-padding-top: var(--anchor-offset);
+}
+
+#problema,
+#soluzione,
+#differenzazione,
+#impatto,
+#onu {
+    scroll-margin-top: var(--anchor-offset);
 }
 
 body {
@@ -833,6 +842,10 @@ footer {
  */
 
 @media (max-width: 850px) {
+    :root {
+        --anchor-offset: 120px;
+    }
+
     /* 1. Riduciamo il padding del contenitore principale */
     .contiene-header {
         padding: 5px 5%; /* Prima era 18px */
