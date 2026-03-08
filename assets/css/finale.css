@@ -395,7 +395,7 @@ footer {
     margin-top: 1.4rem;
     border-radius: var(--radius-xl);
     border: 1px solid rgba(11, 58, 70, 0.09);
-    background: linear-gradient(145deg, #052f39 0%, #0b3f4c 55%, #106070 100%);
+    background: linear-gradient(145deg, #0b4a5a 0%, #1c6375 55%, #67d9f0 100%);
     color: #e8f9fd;
     padding: clamp(1.9rem, 3vw, 2.6rem) clamp(1rem, 3vw, 2rem);
     box-shadow: var(--shadow-strong);
