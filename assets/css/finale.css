@@ -467,20 +467,15 @@ footer {
 }
 
 .instagram,
-.youtube {
+.youtube,
+.facebook {
     width: auto;
     height: 27px;
-    filter: grayscale(100%) brightness(10) opacity(0.95);
 }
 
 .facebook {
-    width: auto;
-    height: 25px;
-    padding: 2px;
-    border-radius: 6px;
-    background: rgba(255, 255, 255, 0.96);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    filter: none;
+    height: 27px;
+    filter: saturate(0.45) brightness(1.35) contrast(1.08) opacity(0.97);
 }
 
 .youtube {
@@ -498,10 +493,6 @@ footer {
 }
 
 /* Scopri pagina */
-body.pagina-scopri .contiene-header {
-    display: none;
-}
-
 .barra-scopri {
     margin-top: 0.95rem;
     margin-bottom: 1rem;
@@ -629,7 +620,8 @@ body:not(.pagina-scopri) .barra-scopri {
 /* Richiedi pagina */
 .btn-indietro {
     margin: 1rem 0 0;
-    display: inline-flex;
+    display: flex;
+    width: fit-content;
     align-items: center;
     gap: 0.45rem;
     text-decoration: none;
@@ -640,6 +632,12 @@ body:not(.pagina-scopri) .barra-scopri {
     padding: 0.55rem 1rem;
     font-size: 0.88rem;
     font-weight: 600;
+}
+
+body.pagina-scopri .btn-indietro,
+body.pagina-richiedi .btn-indietro,
+body.pagina-grazie .btn-indietro {
+    margin: 1rem 0 0 auto;
 }
 
 .btn-indietro:hover {
